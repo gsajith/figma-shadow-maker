@@ -17,6 +17,14 @@ Install the packages
 npm i
 ```
 
+Link the bezier curve editor submodule
+```
+cd bezier-editor
+npm link
+cd ..
+npm link react-bezier-curve-editor
+```
+
 Run the plugin in dev mode
 ```
 npm run build:watch

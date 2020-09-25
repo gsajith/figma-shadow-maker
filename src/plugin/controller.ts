@@ -15,7 +15,7 @@ figma.ui.onmessage = msg => {
     }
     if (msg.type === 'advanced') {
         if (msg.show) {
-            figma.ui.resize(256, 832);
+            figma.ui.resize(256, 910);
         } else {
             figma.ui.resize(256, 505);
         }
@@ -99,6 +99,7 @@ function generateShadows(props) {
             color: {r: rgb.r, b: rgb.b, g: rgb.g, a: alpha},
             offset: {x: offsetX, y: offsetY},
             radius: radius,
+            spread: normalizeSmallNums(props.spread),
         } as ShadowEffect);
     }
     return shadows;

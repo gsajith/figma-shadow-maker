@@ -83,6 +83,7 @@ const initialValues = {
     offset: 100,
     blur: 80,
     gap: 0,
+    spread: 0,
 };
 
 const initialBeziers = {
@@ -99,6 +100,7 @@ const App = ({classes}) => {
     const [alpha, setAlpha] = React.useState(initialValues.alpha);
     const [offset, setOffset] = React.useState(initialValues.offset);
     const [gap, setGap] = React.useState(initialValues.gap);
+    const [spread, setSpread] = React.useState(initialValues.spread);
     const [blur, setBlur] = React.useState(initialValues.blur);
     const [color, setColor] = React.useState('#000000');
     const [direction, setDirection] = React.useState(-90);
@@ -108,7 +110,7 @@ const App = ({classes}) => {
     const [blurBezier, setBlurBezier] = React.useState(initialBeziers.blur);
 
     const throttledRenderPost = React.useRef(
-        _.throttle((l, a, o, b, ab, ob, bb, c, d, g, ia) => {
+        _.throttle((l, a, o, b, ab, ob, bb, c, d, g, ia, s) => {
             // Shadow props changed
             parent.postMessage(
                 {
@@ -126,6 +128,7 @@ const App = ({classes}) => {
                             direction: d,
                             gap: g,
                             invertAlpha: ia,
+                            spread: s,
                         },
                     },
                 },
@@ -147,9 +150,10 @@ const App = ({classes}) => {
                 color,
                 direction,
                 gap,
-                invertAlpha
+                invertAlpha,
+                spread
             ),
-        [layers, alpha, offset, blur, alphaBezier, offsetBezier, blurBezier, color, direction, gap, invertAlpha]
+        [layers, alpha, offset, blur, alphaBezier, offsetBezier, blurBezier, color, direction, gap, invertAlpha, spread]
     );
 
     const onCreate = React.useCallback(() => {
@@ -324,18 +328,32 @@ const App = ({classes}) => {
                 </div>
 
                 {showAdvanced && (
-                    <div className={classes.valueContainer}>
-                        <Slider
-                            minValue={0}
-                            maxValue={500}
-                            tooltip="Minimum distance to your shadow"
-                            step={1}
-                            defaultValue={initialValues.gap}
-                            value={gap}
-                            setValue={setGap}
-                            label={'Gap'}
-                        />
-                    </div>
+                    <>
+                        <div className={classes.valueContainer}>
+                            <Slider
+                                minValue={0}
+                                maxValue={500}
+                                tooltip="Minimum distance to your shadow"
+                                step={1}
+                                defaultValue={initialValues.gap}
+                                value={gap}
+                                setValue={setGap}
+                                label={'Gap'}
+                            />
+                        </div>
+                        <div className={classes.valueContainer}>
+                            <Slider
+                                minValue={-500}
+                                maxValue={500}
+                                tooltip="Spread of your shadow"
+                                step={1}
+                                defaultValue={initialValues.spread}
+                                value={spread}
+                                setValue={setSpread}
+                                label={'Spread'}
+                            />
+                        </div>
+                    </>
                 )}
             </div>
             <div className={classes.advancedToggleContainer}>

@@ -1,4 +1,8 @@
+![Icon](https://github.com/gsajith/figma-shadow-maker/blob/master/Icon.png?raw=true)
+
 # Shadow Maker Plug-in
+
+![Cover](https://github.com/gsajith/figma-shadow-maker/blob/master/Cover.png?raw=true)
 
 Based on "Smooth Shadow" by Philipp Brumm (https://brumm.af/shadows).
 

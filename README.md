@@ -8,6 +8,8 @@ Based on "Smooth Shadow" by Philipp Brumm (https://brumm.af/shadows).
 
 Adds shadow direction and shadow minimum distance ("gap").
 
+Plugin is published at: https://www.figma.com/community/plugin/889676455045507628/Shadow-Maker
+
 ## Development
 
 Install the packages

@@ -1,4 +1,16 @@
 body {
     font: 12px sans-serif;
+    color: var(--figma-color-text);
     margin: 0;
+}
+
+.chrome-picker {
+    background-color: var(--figma-color-bg) !important;
+}
+
+.figma-dark .chrome-picker svg {
+    fill: var(--figma-color-text) !important;
+}
+.figma-dark .chrome-picker svg:hover {
+    background: var(--figma-color-bg-secondary) !important;
 }

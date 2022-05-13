@@ -1,4 +1,4 @@
-figma.showUI(__html__, {height: 505, width: 256});
+figma.showUI(__html__, {height: 505, width: 256, themeColors: true});
 import getBezierValue from '../app/util/bezier';
 
 let createdSelection = null;

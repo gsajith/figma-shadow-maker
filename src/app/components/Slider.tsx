@@ -6,7 +6,7 @@ import {withStyles} from '@material-ui/core/styles';
 
 const ColoredSlider = withStyles(theme => ({
     rail: {
-        color: theme.palette.action.disabled,
+        color: 'var(--figma-color-bg-disabled-secondary)',
     },
     track: {
         color: theme.palette.primary.main,

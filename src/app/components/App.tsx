@@ -375,7 +375,9 @@ const App = ({classes}) => {
             </div>
             <div className={classes.divider} />
             <div className={classes.buttonContainer}>
-                <Button onClick={onCancel}>Cancel</Button>
+                <Button color="inherit" onClick={onCancel}>
+                    Cancel
+                </Button>
                 <Button variant="contained" color="primary" onClick={onCreate}>
                     Apply
                 </Button>

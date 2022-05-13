@@ -27,9 +27,9 @@ const BezierChart = ({classes, bezierValue, setBezierValue}: BezierProps) => {
         <BezierCurveEditor
             className={classes.bezier}
             curveLineColor={theme.palette.primary.main}
-            handleLineColor={theme.palette.action.disabled}
-            startHandleColor={theme.palette.text.primary}
-            endHandleColor={theme.palette.text.primary}
+            handleLineColor={'var(--figma-color-text-disabled)'}
+            startHandleColor={'var(--figma-color-text)'}
+            endHandleColor={'var(--figma-color-text)'}
             width={220}
             height={40}
             outerAreaSize={48}
